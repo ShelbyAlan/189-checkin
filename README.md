@@ -14,6 +14,7 @@
 | `FAMILY_THREADX`     | 家庭云签到线程数（不填默认 10）                                                                                                                           | `8`                                  |
 | `PRIVATE_ONLY_FIRST` | 个人云仅签主账号：`true`(是)/`false`(不签)（不填默认 false）                                                                                              | `true`                               |
 | `WX_PUSHER_UID`      | 推送 UID（微信扫码-我的-我的 UID）[二维码](https://wxpusher.zjiecode.com/api/qrcode/4Ix7noqD3L7DMBoSlvig3t4hqjFWzPkdHqAYsg8IzkPreW7d8uGUHi9LJO4EcyJg.jpg) | `UID_123`                            |
+| `WX_PUSHER_APP_TOKEN`      | 推送WXPUSHER TOKEN| `AT_OzwCik0QP4p4AQlKdO4jbgjWApTiWsJr`                            |
 
 ---
 
