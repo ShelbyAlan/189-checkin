@@ -1,0 +1,28 @@
+name: Scheduled Keep Alive
+
+on:
+  schedule:
+    # 设置cron表达式，每59天的0点（UTC时间）自动运行一次
+    - cron: '0 0 */59 * *'
+  workflow_dispatch: # 此项允许您手动触发工作流，方便测试
+
+jobs:
+  scheduled-keep-alive:
+    runs-on: ubuntu-latest
+    steps:
+      # 步骤1：获取仓库代码
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 步骤2：记录活动时间戳
+      - name: Record a timestamp
+        run: echo "Scheduled run at $(date)" >> keep_alive.log
+
+      # 步骤3：提交更改
+      - name: Commit and push change
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add keep_alive.log
+          git commit -m "Chore: scheduled activity to keep repo active [skip ci]" || exit 0
+          git push
